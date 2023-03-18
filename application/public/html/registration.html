@@ -1,60 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
     <title>Registration</title>
-</head>
-<body>
-     <header>
-        <h1>CSC 317 website</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="login.html">Login</a></li>
-                 <li><a href="registration.html">Registration</a></li>
-                <li><a href="postvideo.html">Post Video</a></li>
-                <li><a href="viewpost.html">View Post</a></li>
-                <li><a href="profile.html">Profile</a></li>
-            </ul>
-        </nav>
-     </header> 
-     <main>
-        <h2>Registration Form</h2>
-        <form>
+  </head>
+  <body>
+    <header>
+      <h1>
+        <a href="index.html">CSC 317 WEBSITE</a>
+      </h1>
+      <nav class="nav-group">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="registration.html">Registration</a></li>
+          <li><a href="postvideo.html">Post Video</a></li>
+          <li><a href="viewpost.html">View Post</a></li>
+          <li><a href="profile.html">Profile</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>Registration Form</h2>
+      <form>
+        <div class="input-group">
+          <div>
             <label for="username">Username: </label>
-            <input type="text" name="Username" id="username" 
-            placeholder="Username">
-
-            <label for="email">  Email:</label>
-            <input type="text" name="email" id="email" 
-            placeholder="email">
-<br><br>
+            <input
+              type="text"
+              name="Username"
+              id="username"
+              placeholder="Username"
+              required
+            />
+          </div>
+          <br />
+          <div>
+            <label for="email"> Email:</label>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder="email"
+              required
+            />
+          </div>
+          <br />
+          <div>
             <label for="password">Password: </label>
-            <input type="password" name="password" id="password" 
-            placeholder="password">
-            
-            <label for="confirm password">  Confirm Password: </label>
-            <input type="password" name="confirm password" id="confirm password" 
-            placeholder="confirm password">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="password"
+              required
+            />
+          </div>
+          <br />
+          <div>
+            <label for="confirm password"> Confirm Password: </label>
+            <input
+              type="password"
+              name="confirm password"
+              id="confirm password"
+              placeholder="confirm password"
+              required
+            />
+          </div>
+          <br />
+          <div class="age">
+            <label for="age">Are you 13+ years old: </label>
+            <input type="checkbox" name="age" value="age" required />
+          </div>
 
-<br><br>
-            <label for="age">Are you 13+ years old:  </label>  
-            Yes<input type="radio" name="age"  value="age">
-            No<input type="radio" name="age"  value="age">
-            <br><br>
-
-            <label for="Rules"><a href = "">TOS and Privacy Rules</a></label>  
-            <input type="checkbox"  required>
-<br><br>
-            <input type="submit" value = "Register">
-
-        </form>
-        <br>
-     </main>
-    <footer>
-Navjot Singh &copy; 2023
-    </footer>
-</body>
+          <br>
+          <div class="Rules">
+            <label for="Rules"><a href="">TOS and Privacy Rules</a></label>
+            <input type="checkbox" name="age" value="age" required />
+          </div>
+          <br>
+          <div class="buttonReg">
+            <button type="submit" formaction="postvideo.html">Register</button>
+          </div>
+        </div>
+      </form>
+      <br />
+    </main>
+    <footer>Navjot Singh &copy; 2023</footer>
+  </body>
 </html>

@@ -1,8 +1,197 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+}
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: linear-gradient(rgb(47, 45, 45), grey);
+  height: 100;
+  overflow:auto;
+  width: 100%;
+
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 11px;
+  width: 100%;
+  color: beige;
+}
+footer {
+  padding: 11px;
+  text-align: center;
+  background-color: rgb(90, 89, 89);
+  width: 100%;
+  font-size: 20px;
+  color: beige;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  bottom: 0px;
+  margin-bottom: -100px;
+  margin-top: -100px;
+}
+h1 a {
+  position: relative;
+  display: block;
+  color: beige;
+  padding: 16px;
+  font-size: 40px;
+  text-decoration: none;
+  border-radius: 15px;
+  text-align: center;
+}
+h1 a:hover {
+  text-align: center;
+  background-color: #808080;
+  transition: 0.2s;
+}
+h2 {
+  color: beige;
+  text-align: center;
+  background-color: rgb(116, 114, 114);
 }
 
-a {
-  color: #00B7FF;
+.nav-group {
+  list-style: none;
+}
+.nav-group ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: auto;
+}
+.nav-group li {
+  display: inline-block;
+}
+
+.nav-group a {
+  position: relative;
+  display: block;
+  color: beige;
+  padding: 16px;
+  font-size: 17px;
+  text-decoration: none;
+  border-radius: 15px;
+}
+.nav-group a:hover {
+  background-color: gray;
+  transition: 0.2s;
+}
+
+.input-group {
+  background-color: beige;
+  padding: 10px;
+  margin-left: 200px;
+  margin-right: 200px;
+  border-radius: 20px;
+  color: black;
+  position: relative;
+}
+.input-group label {
+  float: left;
+  font-size: 17px;
+}
+.input-group input {
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  padding: 10px;
+  border: none;
+}
+
+.button button {
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(116, 114, 114);
+  color: whitesmoke;
+  font-size: 17px;
+}
+.buttonReg button {
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(116, 114, 114);
+  color: whitesmoke;
+  font-size: 20px;
+}
+.button:hover {
+  color: #808080;
+}
+.buttonReg input:hover {
+  color: wheat;
+  transition: 0.2s;
+  opacity: 1;
+}
+
+.button:active {
+  transform: translateY(6px);
+}
+.buttonReg:active {
+  transform: translateY(6px);
+}
+.input-group > .age input {
+  background-color: none;
+  box-shadow: none;
+}
+.input-group > .Rules input {
+  background-color: none;
+  box-shadow: none;
+}
+
+.input-group > .Browse input {
+  background-color: none;
+  box-shadow: none;
+}
+.Browse:hover {
+  color: grey;
+}
+.input-group > .textBox textarea {
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  padding: 10px;
+  border: none;
+}
+
+.prevComment {
+  background-color: beige;
+  padding: 10px;
+  margin-left: 200px;
+  margin-right: 200px;
+  border-radius: 20px;
+  color: black;
+  position: relative;
+}
+h3 {
+  position: relative;
+  display: block;
+  color: beige;
+  padding: 16px;
+  font-size: 30px;
+  text-decoration: none;
+  border-radius: 15px;
+  text-align: center;
+}
+.image{
+  display: flex;
+  justify-content: center;
 }

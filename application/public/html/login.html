@@ -1,44 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
     <title>Login</title>
-</head>
-<body>
-     <header>
-        <h1>CSC 317 website</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="login.html">Login</a></li>
-                 <li><a href="registration.html">Registration</a></li>
-                <li><a href="postvideo.html">Post Video</a></li>
-                <li><a href="viewpost.html">View Post</a></li>
-                <li><a href="profile.html">Profile</a></li>
-            </ul>
-        </nav>
-     </header> 
+  </head>
+  <body>
+    <header>
+      <h1>
+        <a href="index.html">CSC 317 WEBSITE</a>
+      </h1>
+      <nav class="nav-group">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="registration.html">Registration</a></li>
+          <li><a href="postvideo.html">Post Video</a></li>
+          <li><a href="viewpost.html">View Post</a></li>
+          <li><a href="profile.html">Profile</a></li>
+        </ul>
+      </nav>
+    </header>
 
-     <main>
-        <h2>Login Form</h2>
-        <form>
+    <main>
+      <h2>Login Form</h2>
+      <form>
+        <div class="input-group">
+          <div>
             <label for="username">Username</label>
-            <input type="text" name="Username" id="username" 
-            placeholder="Username">
+            <input
+              type="text"
+              name="Username"
+              id="username"
+              placeholder="Username"
+              required
+            />
+          </div>
 
+          <br />
+          <div>
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" 
-            placeholder="password">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="password"
+              required
+            />
+          </div>
+          <br />
+          <div class="button">
+            <button type="submit" formaction="profile.html">Log in</button>
+          </div>
+          <br />
+          <div class="button">
+            <button type="submit" formaction="registration.html">
+              Have not registered yet? Sign up here
+            </button>
+          </div>
+        </div>
+      </form>
+    </main>
 
-            <input type="submit" value = "Log in">
-
-        </form>
-     </main>
-
-    <footer>
-Navjot Singh &copy; 2023
-    </footer>
-</body>
+    <footer>Navjot Singh &copy; 2023</footer>
+  </body>
 </html>

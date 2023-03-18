@@ -4,12 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
     <title>Profile</title>
   </head>
   <body>
     <header>
-      <h1>CSC 317 website</h1>
-      <nav>
+      <h1>
+        <a href="index.html">CSC 317 WEBSITE</a>
+      </h1>
+      <nav class="nav-group">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="login.html">Login</a></li>
@@ -19,19 +22,30 @@
           <li><a href="profile.html">Profile</a></li>
         </ul>
       </nav>
-      <main>
+    </header>
 
-          <label for="Username ">Username: </label>
-          <label for="Username ">User's username here</label>
+    <main>
+      <h2>Profile</h2>
+      <div class="input-group">
+        <div>
+          <label for="Username ">Username:</label>
+          <label for="Username "> User's username here</label>
+        </div>
+        <br>
+        <div>
           <br>
           <label for="Email ">Email: </label>
           <label for="Email ">User's email here</label>
+        </div>
+        <br />
+
+        <div>
           <br>
-          <h2>User's Post List</h2>
-          <label for="post"><a href = "viewpost.html">Post 1</a></label>
-      </main>
-    </header>
-    <br /><br />
+          <label for="post"><a href="viewpost.html">Post 1</a></label>
+        </div>
+      </div>
+    </main>
+<br>
     <footer>Navjot Singh &copy; 2023</footer>
   </body>
 </html>
