@@ -1,50 +1,60 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
     <title>Post Video</title>
-</head>
-<body>
-     <header>
-        <h1>CSC 317 website</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="login.html">Login</a></li>
-                 <li><a href="registration.html">Registration</a></li>
-                <li><a href="postvideo.html">Post Video</a></li>
-                <li><a href="viewpost.html">View Post</a></li>
-                <li><a href="profile.html">Profile</a></li>
-            </ul>
-        </nav>
-        <main>
-            <h2>Post Video</h2>
-            <label for="title">Video Title: </label>
-            <input type="text" name="title" id="title" 
-            placeholder="Title">
-            <br><br>
-            <label for="description">Video description: </label>
-            <textarea rows="4" cols="50" name="comment" form="usrform">
-            </textarea>
+  </head>
+  <body>
+    <header>
+      <h1>
+        <a href="index.html">CSC 317 WEBSITE</a>
+      </h1>
+      <nav class="nav-group">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="registration.html">Registration</a></li>
+          <li><a href="postvideo.html">Post Video</a></li>
+          <li><a href="viewpost.html">View Post</a></li>
+          <li><a href="profile.html">Profile</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>Post Video</h2>
+      <div class="input-group">
+        <div>
+          <label for="title">Video Title: </label>
+          <input type="text" name="title" id="title" placeholder="Title"  required/>
+        </div>
+        <br />
+        <div class="textBox">
+          <label for="description">Video description: </label>
+          <textarea rows="4" cols="50" name="comment" form="usrform" required>
+         </textarea>
+        </div>
+        <br />
+        <label for="upload: ">Video upload: &emsp;</label>
+        <div class="Browse">
+          <input type="file" accept="video/*" />
+        </div>
+        <br />
+        <div class="Rules">
+          <label for="Rules" 
+            >Check the box to accept
+            <a href="">Acceptable Use Policy: </a></label
+          ><input type="checkbox" name="Rules" value="" required />
+        </div>
+      <br>
+        <div class="buttonReg">
+          <button type="submit" >Submit</button>
+        </div>
+      </div>
+    </main>
 
-            <br><br>
-
-           <label for="upload: ">Video upload: &emsp;</label>
-           <input type="file" accept="video/*">
-
-            <br><br>
-            <label for="Rules">Check the box to accept <a href = "">Acceptable Use Policy</a></label>  
-            <input type="checkbox" name="Rules"  value=""  required>
-<br><br>
-            <input type="submit" value = "Submit">
-            
-        </main>
-     </header> 
-    <footer>
-Navjot Singh &copy; 2023
-    </footer>
-</body>
+    <footer>Navjot Singh &copy; 2023</footer>
+  </body>
 </html>
