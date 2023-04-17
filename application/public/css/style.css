@@ -7,15 +7,20 @@ html {
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
   height: 100%;
-  width: 100%;
-  overflow: scroll;
+  margin: 0;
+  padding: 0;
 }
 body {
   background-image: linear-gradient(rgb(47, 45, 45), grey);
-  height: 100;
-  overflow:auto;
+  background-attachment: fixed;
+  margin: 0%;
+  padding: 0%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
   width: 100%;
-
+  overflow: auto;
+  background-attachment: fixed;
 }
 header {
   display: flex;
@@ -26,20 +31,16 @@ header {
   color: beige;
 }
 footer {
+  display: flex;
+  justify-content: center; /* centers items horizontally */
+  align-items: center;
   padding: 11px;
-  text-align: center;
-  background-color: rgb(90, 89, 89);
   width: 100%;
-  font-size: 20px;
   color: beige;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: auto;
-  bottom: 0px;
-  margin-bottom: -100px;
-  margin-top: -100px;
+  background-color: rgb(90, 89, 89);
+  margin-top: auto;
+  font-size: 25px;
+  text-align: center;
 }
 h1 a {
   position: relative;
@@ -185,13 +186,151 @@ h3 {
   position: relative;
   display: block;
   color: beige;
-  padding: 16px;
+  padding: 1px;
   font-size: 30px;
   text-decoration: none;
   border-radius: 15px;
   text-align: center;
 }
-.image{
+.image {
   display: flex;
   justify-content: center;
+}
+
+.valid-text {
+  outline: solid green;
+  outline-width: 3px;
+}
+
+.invalid-text {
+  outline: solid red;
+  outline-width: 3px;
+}
+
+#rules {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  width: 100%;
+  font-size: 15px;
+  color: black;
+  border-radius: 20px;
+  list-style-type: none;
+}
+
+#rulesEmail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  width: 100%;
+  font-size: 15px;
+  color: black;
+  border-radius: 20px;
+  list-style-type: none;
+}
+
+#rulesPassword {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  width: 100%;
+  font-size: 15px;
+  color: black;
+  border-radius: 20px;
+  list-style-type: none;
+}
+
+#rulesConPass {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  width: 100%;
+  font-size: 15px;
+  color: black;
+  border-radius: 20px;
+  list-style-type: none;
+}
+
+.age label {
+  display: block;
+  padding-left: 15px;
+  text-indent: -15px;
+}
+
+.age input {
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  margin: 0;
+  margin-left: 10px;
+  vertical-align: bottom;
+  position: relative;
+  top: -1px;
+}
+
+.Rules label {
+  display: block;
+  padding-left: 15px;
+  text-indent: -15px;
+}
+
+.Rules input {
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  margin: 0;
+  margin-left: 10px;
+  vertical-align: bottom;
+  position: relative;
+  top: -1px;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 10px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background-color: beige;
+  margin: 10px;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 1s ease-in-out; /* set the fade out speed to 1 second */
+}
+
+.product-card.fade-out {
+  opacity: 0;
+}
+
+.product-img {
+  max-width: 500px;
+  height: 200px;
+  margin-bottom: 1px;
+}
+
+.product-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px;
+    margin: auto;
+}
+
+.product-cost {
+  font-size: 15px;
+  text-align: center;
+  padding: 5px;
+  margin: auto;
+}
+.product-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
 }
