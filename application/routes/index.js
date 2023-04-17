@@ -7,7 +7,7 @@ var router = express.Router();
 router.get('/', function (req, res, next) {
   res.render('index', {
     title: 'CSC 317 App',
-    name: 'Navjot SIngh',
+    name: 'Navjot Singh',
   });
 });
 
