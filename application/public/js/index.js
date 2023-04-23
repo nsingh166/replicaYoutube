@@ -19,7 +19,6 @@ function fadeOut(ev) {
     updateCounter();
   }, 1000); // to fade out the image
   numProducts = document.getElementsByClassName('product-card').length;
-  document.getElementById('product-count').textContent = `${numProducts} being displayed`;
 }
 
 function updateCounter() { // to get the length and then update the display with how many products are there
@@ -58,6 +57,8 @@ function buildCard(data) {
 
   return cardDiv;
 }
+
+
 async function fetchWithDOMAPI() {
   try {
     var response = await fetch(url);

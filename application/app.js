@@ -5,6 +5,7 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const handlebars = require("express-handlebars");
+ 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 
@@ -17,21 +18,23 @@ app.engine(
     partialsDir: path.join(__dirname, "views/partials"), // where to look for partials
     extname: ".hbs", //expected file extension for handlebars files
     defaultLayout: "layout", //default layout for app, general template for all pages in app
-    helpers: {}, //adding new helpers to handlebars for extra functionality
+    helpers: {
+    }, //adding new helpers to handlebars for extra functionality
   })
 );
-
+ 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 
-
+//every request that comes in will use these 5 functions
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-
 app.use(favicon(__dirname + '/public/favicon.ico'));
+
+
 app.use("/public", express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter); // route middleware from ./routes/index.js

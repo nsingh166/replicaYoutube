@@ -1,0 +1,75 @@
+<main>
+  <h2>Registration Form</h2>
+  <form>
+    <div class='input-group'>
+      <div>
+        <label for='username'>Username: </label>
+        <input
+          type='text'
+          name='Username'
+          ÏÏÏ
+          id='username'
+          placeholder='Username'
+          required
+        />
+        <span id='rules'></span>
+      </div>
+      <br />
+      <div>
+        <label for='email'> Email:</label>
+        <input
+          type='text'
+          name='email'
+          id='email'
+          placeholder='email'
+          required
+        />
+        <span id='rulesEmail'></span>
+      </div>
+      <br />
+      <div>
+        <label for='password'>Password: </label>
+        <input
+          type='password'
+          name='password'
+          id='password'
+          placeholder='password'
+          required
+        />
+        <span id='rulesPassword'></span>
+      </div>
+      <br />
+      <div>
+        <label for='confirm password'> Confirm Password: </label>
+        <input
+          type='password'
+          name='confirm password'
+          id='confirm_password'
+          placeholder='confirm password'
+          required
+        />
+        <span id='rulesConPass'></span>
+      </div>
+      <br />
+      <div class='age'>
+        <label for='age'>Are you 13+ years old: </label>
+        <input type='checkbox' name='age' value='age' required />
+      </div>
+
+      <br />
+      <div class='Rules'>
+        <label for='Rules'><a href=''>TOS and Privacy Rules: </a></label>
+        <input type='checkbox' name='tos' value='tos' required />
+      </div>
+      <br />
+      <div class='buttonReg'>
+        <button
+          type='submit'
+          id='registerButton'
+          formaction='postvideo.html'
+        >Register</button>
+      </div>
+    </div>
+  </form>
+  <br />
+</main>

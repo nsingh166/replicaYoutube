@@ -14,20 +14,21 @@ var http = require('http');
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
+//app.set is a way to set properties of the express app
 
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+var server = http.createServer(app); 
 
 /**
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
+server.listen(port); //
+server.on('error', onError); // if there is a erro while loading the app then it would call this funtion
+server.on('listening', onListening); // if app opens up all the way and waiting for request we will on listing
 
 /**
  * Normalize a port into a number, string, or false.
@@ -58,9 +59,7 @@ function onError(error) {
     throw error;
   }
 
-  var bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
+  var bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
@@ -83,8 +82,6 @@ function onError(error) {
 
 function onListening() {
   var addr = server.address();
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
+  var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
