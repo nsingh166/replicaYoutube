@@ -1,3 +1,4 @@
+require('dotenv').config(); // access for the teacher I think
 const createError = require("http-errors");
 const express = require("express");
 const favicon = require('serve-favicon');
