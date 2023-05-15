@@ -112,6 +112,8 @@ h2 {
   border: none;
 }
 
+
+
 .button button {
   border-radius: 15px;
   box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
@@ -122,7 +124,32 @@ h2 {
   background-color: rgb(116, 114, 114);
   color: whitesmoke;
   font-size: 17px;
+  text-decoration: none;
 }
+
+.button button:hover {
+  background-color: rgb(96, 94, 94);
+}
+
+.button a {
+  display: inline-block;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(116, 114, 114);
+  color: whitesmoke;
+  font-size: 17px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button a:hover {
+  background-color: rgb(92, 92, 92);
+}
+
 .buttonReg button {
   border-radius: 15px;
   box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
@@ -133,6 +160,7 @@ h2 {
   background-color: rgb(116, 114, 114);
   color: whitesmoke;
   font-size: 20px;
+
 }
 .button:hover {
   color: #808080;

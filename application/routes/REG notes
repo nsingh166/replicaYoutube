@@ -1,0 +1,26 @@
+user- enter http://localhost:3000/registration into url bar
+b -browser generate a get request
+b-send get request to http://localhost:3000/registration
+N/E-server receives the request
+N/E/YOU-routing 
+N/E/-execute route handler
+N/E/YOU-render html templated
+N/E/-respond to browser sending HTML page
+B-browser receives page
+B-parse/renders HTML
+USER-input data into fields
+     YOU   -input valid.js
+USER-click submit
+B-extract data from form
+B-generate our post request
+B-send data to server depending on action value
+N/E-server receives the request
+N/E-parse payload and add it to req.body (body-parser/urlencode)
+N/E/YOU-routing 
+N/E/YOU-execute route handler (/registration, POST)
+YOU-extract out of req.body
+YOU-server side validation/sanitize
+YOU-form data is sent to server
+YOU-insert into user table
+YOU-check db response 
+YOU-repsonse for either failure or success of maing an account

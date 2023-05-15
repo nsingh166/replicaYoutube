@@ -17,7 +17,7 @@ router.get('/login', function (req, res) {
   });
 });
 
-router.get('/registration', function (req, res) {
+router.get('/registration', function (req, res, next) {
   res.render('registration', {
     title: 'Registration',css:["style.css"], js:["valid.js"]
   });
@@ -26,6 +26,7 @@ router.get('/registration', function (req, res) {
 router.get('/postvideo', function (req, res) {
   res.render('postvideo', {
     title: 'Postvideo',css:["style.css"] 
+    
   });
 });
 

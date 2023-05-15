@@ -1,12 +1,14 @@
 <main>
   <h2>Login Form</h2>
-  <form>
+  <form method="POST"
+  action = "/users/login"
+  enctype="application/x-www-form-urlencoded">
     <div class='input-group'>
       <div>
         <label for='username'>Username</label>
         <input
           type='text'
-          name='Username'
+          name='username'
           id='username'
           placeholder='Username'
           required
@@ -24,16 +26,16 @@
           required
         />
       </div>
+
       <br />
       <div class='button'>
-        <button type='submit' formaction='/profile'>Log in</button>
+        <button type='submit'>Log in</button>
       </div>
       <br />
       <div class='button'>
-        <button type='submit' formaction='/registration'>
-          Have not registered yet? Sign up here
-        </button>
+     <a href='/registration'>Have not registered yet? Sign up here</a>
       </div>
+
     </div>
   </form>
 </main>
