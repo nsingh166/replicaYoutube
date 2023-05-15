@@ -1,21 +1,20 @@
 <main>
   <h2>Profile</h2>
-  <div class='input-group'>
+  <div class='profile-group'>
     <div>
-      <label for='Username '>Username:</label>
-      <label for='Username '> User's username here</label>
+      <label for='Username '>Username: {{user.username}} </label>
     </div>
-    <br />
+  
     <div>
-      <br />
-      <label for='Email '>Email: </label>
-      <label for='Email '>User's email here</label>
+  
+      <label for='Email '>Email: {{user.email}} </label>
+      
+      <div class="post">
+      <label for='post'><a href='/viewpost'>Post 1</a></label>
+    </div>
     </div>
     <br />
 
-    <div>
-      <br />
-      <label for='post'><a href='/viewpost'>Post 1</a></label>
-    </div>
+    
   </div>
 </main>

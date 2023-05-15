@@ -57,16 +57,14 @@ router.post('/registration', async function (req, res, next) {
 router.post('/login', async function (req, res, next) {
   
   const { username, password } = req.body;
-console.log("DATA INFORMATION", req.body);
   if (!username || !password) {
-    console.log('fooo',rows);
+
     return res.redirect('/login');
   } else {
     var [rows, fields] = await db.execute(
       `select id, username, password, email from users where username=?;`,
       [username]
     );
-    console.log('fooo',rows);
 
     var user = rows[0];
     if (!user) {
@@ -75,6 +73,11 @@ console.log("DATA INFORMATION", req.body);
       var passwordsMatch = await bcrypt.compare(password, user.password); // encrypted password
       console.log(`passwordsMatch: ${passwordsMatch}`);
       if (passwordsMatch) {
+        req.session.user = { //only showing the user id email and username in the terminal for the current login attempt
+          userId: user.id,
+          email: user.email,
+          username: user.username
+        };
         return res.redirect("/profile");
        
       } else {
@@ -85,8 +88,6 @@ console.log("DATA INFORMATION", req.body);
 });
 
 
-router.post('/logout', function (req, res, next) {
 
-});
 module.exports = router;
 

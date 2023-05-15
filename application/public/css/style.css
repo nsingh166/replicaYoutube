@@ -100,6 +100,15 @@ h2 {
   color: black;
   position: relative;
 }
+.profile-group {
+  background-color: beige;
+  padding: 10px;
+  margin-left: 200px;
+  margin-right: 200px;
+  border-radius: 20px;
+  color: black;
+  position: relative;
+}
 .input-group label {
   float: left;
   font-size: 17px;
@@ -111,8 +120,6 @@ h2 {
   padding: 10px;
   border: none;
 }
-
-
 
 .button button {
   border-radius: 15px;
@@ -127,6 +134,18 @@ h2 {
   text-decoration: none;
 }
 
+.post label {
+
+  
+  width: 100%;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  
+  color: whitesmoke;
+  font-size: 17px;
+  text-decoration: none;
+}
 .button button:hover {
   background-color: rgb(96, 94, 94);
 }

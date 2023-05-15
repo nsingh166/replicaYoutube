@@ -59,12 +59,13 @@ app.use(
   })
 );
 
+//middleware
 app.use(function (req, res, next) {
-
-  if(req.session.user){
-    res.locals.isLoggedIn = true;
-    res.locals.user = req.session.user;
-  }
+console.log(req.session);
+if(req.session.user){
+  res.locals.isLoggedIn = true;
+  res.locals.user = req.session.user;
+}
   next();
 });
 
