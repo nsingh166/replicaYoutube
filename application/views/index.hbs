@@ -1,13 +1,5 @@
 <main>
-  <h2>
-    <div id='num-products'>
-      Number of products:
-      <span id='product-count'></span>
-    </div>
-  </h2>
-  <div class='product-info'>
-    <p class='product-title'></p>
-    <p class='product-cost'></p>
-  </div>
-  <div class='product-list' id='product-list'></div>
+  {{#each posts}}
+    {{> cards this}}
+  {{/each}}
 </main>

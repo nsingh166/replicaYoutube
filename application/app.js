@@ -9,9 +9,11 @@ const handlebars = require('express-handlebars');
 
 const sessions = require('express-session');
 const mysqlStore = require('express-mysql-session')(sessions);
-
+const flash = require('express-flash');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const postsRouter = require("./routes/posts");
+const commentsRouter = require("./routes/comments")
 
 const app = express();
 
@@ -22,7 +24,11 @@ app.engine(
     partialsDir: path.join(__dirname, 'views/partials'), // where to look for partials
     extname: '.hbs', //expected file extension for handlebars files
     defaultLayout: 'layout', //default layout for app, general template for all pages in app
-    helpers: {}, //adding new helpers to handlebars for extra functionality
+    helpers: {
+      nonEmptyObject: function(obj){
+        return obj && obj.constructor === Object && Object.keys(obj).length >0;
+      }
+    }, //adding new helpers to handlebars for extra functionality
   })
 );
 
@@ -45,7 +51,7 @@ app.use(cookieParser('csc 317 secret'));
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
-
+app.use(express.static('public'));
 app.use(
   sessions({
     secret: 'csc 317 secret',
@@ -58,6 +64,7 @@ app.use(
     },
   })
 );
+app.use(flash()); // it will be a flash message
 
 //middleware
 app.use(function (req, res, next) {
@@ -75,6 +82,9 @@ if(req.session.user){
 */
 app.use('/', indexRouter); // route middleware from ./routes/index.js
 app.use('/users', usersRouter); // route middleware from ./routes/users.js
+
+app.use("/posts", postsRouter);
+app.use("/comments", commentsRouter);
 
 /**
  * Catch all route, if we get to here then the

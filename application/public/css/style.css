@@ -11,7 +11,7 @@ html {
   padding: 0;
 }
 body {
-  background-image: linear-gradient(rgb(47, 45, 45), grey);
+  background-image: linear-gradient(rgb(41, 40, 40), grey);
   background-attachment: fixed;
   margin: 0%;
   padding: 0%;
@@ -89,6 +89,63 @@ h2 {
 .nav-group a:hover {
   background-color: gray;
   transition: 0.2s;
+}
+
+
+.nav-group {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.nav-group ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-group li {
+  display: inline-block;
+}
+
+.nav-group li:last-child {
+  margin-left: auto;
+}
+
+.nav-group a {
+  position: relative;
+  display: block;
+  color: beige;
+  padding: 16px;
+  font-size: 17px;
+  text-decoration: none;
+  border-radius: 15px;
+}
+
+.nav-group a:hover {
+  background-color: gray;
+  transition: 0.2s;
+}
+
+.nav-group form {
+  margin-left: 20px;
+}
+
+.nav-group input[type="text"] {
+  padding: 5px 10px;
+  border-radius: 15px;
+  border: none;
+}
+
+.nav-group button[type="submit"] {
+  padding: 5px 10px;
+  border-radius: 15px;
+  border: none;
+  background-color: rgb(116, 114, 114);
+  color: bei;
+  font-size: 17px;
+  text-decoration: none;
 }
 
 .input-group {
@@ -220,7 +277,7 @@ h2 {
   border: none;
 }
 
-.prevComment {
+.Comments {
   background-color: beige;
   padding: 10px;
   margin-left: 200px;
@@ -381,3 +438,61 @@ h3 {
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
 }
+.alert {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.alert-danger {
+  background-color: red;
+  color: black;
+}
+
+.alert-success {
+  background-color: green;
+  color: black;
+}
+
+.hide-flash {
+  display: none;
+}
+
+
+.video-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.video-card {
+  flex: 0 0 auto;
+  max-width: 210px; 
+}
+
+
+.card-thumbnail {
+  width: 100%;
+  height: auto;
+  background-color: beige;
+  color: beige; 
+  margin-bottom: 5px;
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: auto;
+}
+
+.card-title {
+  margin-top: 5px;
+  background-color: beige;
+  color: black;
+  font-size: 20px;
+  padding: 5px;
+}
+
+
+
+
+

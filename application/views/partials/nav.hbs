@@ -1,11 +1,17 @@
-<nav class='nav-group'>
+<nav class="nav-group">
   <ul>
-    <li><a href='/'>Home</a></li>
-    <li><a href='/login'>Login</a></li>
-    <li><a href='/registration'>Registration</a></li>
-    <li><a href='/postvideo'>Post Video</a></li>
-    <li><a href='/viewpost'>View Post</a></li>
-    <li><a href='/profile'>Profile</a></li>
-    <li><a href='/logout'>Log out</a></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="/login">Login</a></li>
+    <li><a href="/registration">Registration</a></li>
+    <li><a href="/postvideo">Post Video</a></li>
+    <li><a href="/viewpost">View Post</a></li>
+    <li><a href="/profile">Profile</a></li>
+    <li><a href="/logout">Log out</a></li>
+    <li>
+      <form action="/search" method="GET">
+        <input type="text" name="query" placeholder="Search..." />
+        <button type="submit">Search</button>
+      </form>
+    </li>
   </ul>
 </nav>

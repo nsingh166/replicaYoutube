@@ -1,34 +1,53 @@
 <main>
   <h2>Post Video</h2>
-  <div class='input-group'>
-    <div>
-      <label for='title'>Video Title: </label>
-      <input type='text' name='title' id='title' placeholder='Title' required />
+  <form
+    id='post-image'
+    class='input-form'
+    action='/posts/create'
+    method='POST'
+    enctype='multipart/form-data'
+  >
+    <div class='input-group'>
+      <div>
+        <label for='title'>Video Title: </label>
+        <input
+          type='text'
+          name='title'
+          id='title'
+          placeholder='Title'
+          required
+        />
+      </div>
+      <br />
+
+     <div class='textBox'>
+  <label for='description'>Video description: </label>
+  <input rows='4' cols='50' name='description' form='post-image' required></input>
+
+</div>
+
+      <br />
+
+      <label for='upload: '>Video upload: &emsp;</label>
+      <div class='Browse'>
+        <input type='file' accept='video/*' name='uploadVideo' />
+      </div>
+      <br />
+
+      <div class='Rules'>
+        <label for='Rules'>Check the box to accept
+          <a href=''>Acceptable Use Policy: </a></label><input
+          type='checkbox'
+          name='Rules'
+          value=''
+          required
+        />
+      </div>
+      <br />
+
+      <div class='buttonReg'>
+        <button type='submit' value="Post Video">Submit</button>
+      </div>
     </div>
-    <br />
-    <div class='textBox'>
-      <label for='description'>Video description: </label>
-      <textarea rows='4' cols='50' name='comment' form='usrform' required>
-      </textarea>
-    </div>
-    <br />
-    <label for='upload: '>Video upload: &emsp;</label>
-    <div class='Browse'>
-      <input type='file' accept='video/*' />
-    </div>
-    <br />
-    <div class='Rules'>
-      <label for='Rules'>Check the box to accept
-        <a href=''>Acceptable Use Policy: </a></label><input
-        type='checkbox'
-        name='Rules'
-        value=''
-        required
-      />
-    </div>
-    <br />
-    <div class='buttonReg'>
-      <button type='submit'>Submit</button>
-    </div>
-  </div>
+  </form>
 </main>

@@ -1,0 +1,18 @@
+<div id="flash-message">
+  {{#if messages.error}}
+  <div class="alert alert-danger">{{messages.error}}</div>
+  {{else}}
+  <div class="alert alert-success">{{messages.success}}</div>
+  {{/if}}
+</div>
+
+<script>
+  window.addEventListener('DOMContentLoaded', function() {
+    var flashMessage = document.getElementById('flash-message');
+    if (flashMessage) {
+      setTimeout(function() {
+        flashMessage.classList.add('hide-flash');
+      }, 2000);
+    }
+  });
+</script>

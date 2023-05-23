@@ -17,7 +17,9 @@
   </head>
 
   <body>
-    {{log this}}
+    {{#if (nonEmptyObject messages)}}
+    {{> flashmessage this}}
+    {{/if}}
     {{> header}}
     {{> nav}}
     <main>{{{body}}}</main>
