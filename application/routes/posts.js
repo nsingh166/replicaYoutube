@@ -58,7 +58,7 @@ router.post(
             if (error) return next(error);
             setTimeout(() => {
               return res.redirect("/");
-            }, 2000);
+            }, 2500);
           });
         } else {
           throw new Error('Post could not be created');

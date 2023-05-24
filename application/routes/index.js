@@ -1,7 +1,8 @@
 var express = require('express');
-const { isLoggedIn } = require('../middleware/auth');
 var router = express.Router();
 const db = require('../conf/database');
+const { isLoggedIn, isMyProfile } = require('../middleware/auth');
+
 /* GET home page. */
 // localhost:3000
 
@@ -52,16 +53,40 @@ router.get('/postvideo',isLoggedIn, function (req, res) {
   });
 });
 
-router.get('/profile', function (req, res) {
-  res.render('profile', {
-    title: 'Profile',
-    css: ['style.css'],
-  });
+router.get('/profile', isLoggedIn, async function (req, res, next) {
+  try {
+    const userId = req.session.user.userId; // Access the user ID from the session
+
+    const query = `
+      SELECT p.id, p.title, p.description, p.thumbnail, p.video, p.createdAt, u.username
+      FROM posts p
+      JOIN Users u ON p.fk_userId = u.id
+      WHERE u.id = ?
+      ORDER BY p.createdAt DESC
+    `;
+    const [rows, fields] = await db.execute(query, [userId]);
+
+    res.render('profile', {
+      title: 'Profile',
+      css: ['style.css'],
+      posts: rows, // Pass the fetched posts to the template
+    });
+  } catch (error) {
+    next(error);
+  }
 });
+
 
 router.get('/viewpost', async function (req, res, next) {
   try {
     const postId = req.query.id; // Assuming the id is passed as a query parameter
+
+    console.log('Post ID:', postId);
+    
+    if (!postId) {
+      // Handle case where post ID is missing
+      return res.redirect('/'); // Redirect to home page or show an error message
+    }
 
     const query = `
       SELECT p.id, p.title, p.description, p.thumbnail, p.video, p.createdAt, u.username
@@ -71,12 +96,17 @@ router.get('/viewpost', async function (req, res, next) {
     `;
     const [rows, fields] = await db.execute(query, [postId]);
 
+    console.log('Rows:', rows);
+
     if (rows.length === 0) {
       // Handle case where post is not found
+      console.log('Post not found');
       return res.redirect('/'); // Redirect to home page or show an error message
     }
 
     const post = rows[0];
+
+    console.log('Post:', post);
 
     res.render('viewpost', {
       title: `Viewpost ${post.title}`,
@@ -84,9 +114,11 @@ router.get('/viewpost', async function (req, res, next) {
       post: post,
     });
   } catch (error) {
+    console.error('Error:', error);
     next(error);
   }
 });
+
 
 
 router.get('/logout', function (req, res) {

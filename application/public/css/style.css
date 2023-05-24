@@ -11,7 +11,7 @@ html {
   padding: 0;
 }
 body {
-  background-image: linear-gradient(rgb(41, 40, 40), grey);
+  background-image: linear-gradient(#292828, grey);
   background-attachment: fixed;
   margin: 0%;
   padding: 0%;
@@ -26,9 +26,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 11px;
-  width: 100%;
-  color: beige;
+padding: -5px;
+  width: 80%;
+  color: #f5f5dc;
 }
 footer {
   display: flex;
@@ -46,8 +46,7 @@ h1 a {
   position: relative;
   display: block;
   color: beige;
-  padding: 16px;
-  font-size: 40px;
+  padding: 0px;
   text-decoration: none;
   border-radius: 15px;
   text-align: center;
@@ -56,7 +55,11 @@ h1 a:hover {
   text-align: center;
   background-color: #808080;
   transition: 0.2s;
+  padding: 0;
+  margin: -5px;
+  line-height: 1;
 }
+
 h2 {
   color: beige;
   text-align: center;
@@ -65,6 +68,7 @@ h2 {
 
 .nav-group {
   list-style: none;
+  margin-bottom: 5px;
 }
 .nav-group ul {
   list-style-type: none;
@@ -85,6 +89,7 @@ h2 {
   font-size: 17px;
   text-decoration: none;
   border-radius: 15px;
+  font-weight: bolder;
 }
 .nav-group a:hover {
   background-color: gray;
@@ -151,14 +156,16 @@ h2 {
 .input-group {
   background-color: beige;
   padding: 10px;
-  margin-left: 200px;
-  margin-right: 200px;
+  width: 70%;
+  max-width: 600px; /* Adjust the max-width as needed */
+  margin: 0 auto;
   border-radius: 20px;
   color: black;
   position: relative;
 }
+
 .profile-group {
-  background-color: beige;
+  background-color: #f5f5dc;
   padding: 10px;
   margin-left: 200px;
   margin-right: 200px;
@@ -441,15 +448,19 @@ h3 {
 .alert {
   padding: 10px;
   margin-bottom: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  background-size: 50%;
 }
 
 .alert-danger {
-  background-color: red;
+  background-color: #f39f9f;
   color: black;
 }
 
 .alert-success {
-  background-color: green;
+  background-color: #b7f2bb;
   color: black;
 }
 
@@ -458,7 +469,8 @@ h3 {
 }
 
 
-.video-container {
+
+.video-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -490,9 +502,70 @@ h3 {
   color: black;
   font-size: 20px;
   padding: 5px;
+  text-decoration: none;
+
 }
 
+.video-card a {
+  text-decoration: none;
+}
 
+.postContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.postContent userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+/* for Profile*/
+
+.profile-group label {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+}
+
+.profile-group div {
+  margin-bottom: 10px;
+}
+
+.profile-group h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/*view post name*/
+.postInfo {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #544f4f;
+}
+
+.postInfo p {
+  margin: 5px;
+}
+
+.postInfo p span {
+  color: #312f2f;
+  font-weight: bold;
+}
+
+/* logo */
+
+.logo-img {
+  width: 300px;
+  height: auto;
+}
+
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+}
 

@@ -55,7 +55,10 @@ router.post(
 router.post('/login', async function (req, res, next) {
   const { username, password } = req.body;
   if (!username || !password) {
-    return res.redirect('/login');
+    req.flash("error", `The user name or password is incorrect`);
+        req.session.save(function(err){
+          return res.redirect('/login');
+        });
   } else {
     var [rows, fields] = await db.execute(
       `select id, username, password, email from users where username=?;`,
@@ -90,9 +93,6 @@ router.post('/login', async function (req, res, next) {
   }
 });
 
-router.get('/profile/:id(\\d+)', isLoggedIn, isMyProfile, function (req, res) {
-  console.log(req.params);
-  res.render('profile');
-});
+
 
 module.exports = router;

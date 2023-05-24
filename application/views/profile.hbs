@@ -2,19 +2,30 @@
   <h2>Profile</h2>
   <div class='profile-group'>
     <div>
-      <label for='Username '>Username: {{user.username}} </label>
+      <label for='Username'>Username: {{user.username}}</label>
     </div>
-  
     <div>
-  
-      <label for='Email '>Email: {{user.email}} </label>
-      
-      <div class="post">
-      <label for='post'><a href='/viewpost'>Post 1</a></label>
-    </div>
+      <label for='Email'>Email: {{user.email}}</label>
     </div>
     <br />
+          <h3><label for='Username'>POSTS:</label></h3>
 
-    
+    {{#each posts}}
+          <div class='video-grid'>
+        <div class='video-card'>
+          <div class='card-thumbnail'>
+            <a href='/viewpost?id={{id}}'>
+              <img
+                class='video-thumbnail'
+                src='{{thumbnail}}'
+                alt='Video Thumbnail'
+              />
+              <h3 class='card-title'><a>{{title}}</a></h3>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    {{/each}}
   </div>
 </main>
