@@ -45,7 +45,7 @@ router.post(
       } else {
         return res.redirect('/registration'); // if the registration fails then it will take refresh the registration page.
       }
-      console.log(rows);
+    
     } catch (error) {
       next(error);
     }

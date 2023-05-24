@@ -1,20 +1,24 @@
-var validator = require('validator');
+const validator = require('validator');
 var db = require('../conf/database');
 
 module.exports = {
-  //to keep track of these
   usernameCheck: function (req, res, next) {
-    var { username } = req.body.username;
-    username = username.trim(); //to make sure there is no spaces before or after the username
-    
-    if (!validator.islength(username, { min: 3 })) {
-      req.flash('error', 'username must be 3 or more characters');
+    var username = req.body.username.trim();
+
+    // Checks if the username has a length of at least 3 characters
+    if (username.length < 3) {
+      req.flash('error', 'Username must be 3 or more characters');
     }
+
+    // Checks if the first character of the username is a letter
     if (!/[a-zA-Z]/.test(username.charAt(0))) {
       req.flash('error', 'Username must begin with a character');
     }
+
+    // If there are any error messages in the `req.flash('error')` array,
+    // you might want to redirect the user to the '/register' page
     if (req.session.flash.error) {
-      req.redirect('/register');
+      res.redirect('/register');
     } else {
       next();
     }
